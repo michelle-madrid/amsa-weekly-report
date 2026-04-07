@@ -501,6 +501,8 @@ def cen_render_medio_ambiente(doc, lineas):
     texto = re.sub(r"^[•·\-\s]+", "", texto).strip()
     texto = limpiar_texto_global(texto)
 
+    print(f"[DEBUG MA-CEN] repr={repr(linea[:80])} | texto={texto[:60]!r} | subtitulo_actual={subtitulo_actual!r}")
+
     if texto.startswith("Fuente:") or texto.startswith("Nota:"):
       p = doc.add_paragraph(style="Normal AMSA")
       p.paragraph_format.left_indent = Cm(1.27)
